@@ -1,6 +1,7 @@
 import React, {forwardRef, useImperativeHandle, useState} from 'react';
-import {Modal, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {WebView} from 'react-native-webview';
+import Modal from 'react-native-modal';
 
 import LeanWebClient from './LeanWebClient';
 import Lean from './Lean';
@@ -63,7 +64,7 @@ const LinkSDK = forwardRef((props, ref) => {
   };
 
   return (
-    <Modal visible={isOpen} transparent>
+    <Modal visible={isOpen} backdropOpacity={0}>
       <WebView
         {...props.webViewProps}
         style={styles.webView}
