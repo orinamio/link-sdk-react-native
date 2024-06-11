@@ -63,7 +63,7 @@ const LinkSDK = forwardRef((props, ref) => {
   };
 
   return (
-    <Modal visible={isOpen} transparent>
+    <Modal visible={isOpen} {...props.modalProps}>
       <WebView
         {...props.webViewProps}
         style={styles.webView}
@@ -89,6 +89,7 @@ const LinkSDK = forwardRef((props, ref) => {
 
 LinkSDK.defaultProps = {
   webViewProps: {},
+  modalProps: {},
 };
 
 const styles = StyleSheet.create({
